@@ -32,16 +32,25 @@
             return str.substring(0,index) + chr + str.substring(index+1);
         }
         //thank you, rahul on stackoverflow!
+        function randomLetter(){
+            return alphabet[Math.floor(Math.random() * alphabet.length)] 
+        }
         function scrollLetter(el, result){
-            
-            el.innerHTML = ''
-            letter = alphabet[Math.floor(Math.random() * alphabet.length)]
-            if(result.charAt())
+            for(i=0;i<result.length;i++){
+                letter = randomLetter()
+                setInterval(() => {
+                    el.innerHTML = setCharAt(result, i, letter) + ' gatorade'
+                    if(result.charAt(i) == letter){
+                       break 
+                    }
+                }, 100)
+            }
         }
         document.getElementById('gatorade').addEventListener('click', function(){
             random = gatorades[Math.floor(Math.random() * gatorades.length)]
             document.getElementById('gatorade').src = random
-            document.getElementById('type').innerHTML = random.split('.')[0].charAt(0).toUpperCase() + random.split('.')[0].slice('1') + ' gatorade'
+            scrollLetter(document.getElementById('type'), random.split('.')[0].charAt(0).toUpperCase())
+            //document.getElementById('type').innerHTML = random.split('.')[0].charAt(0).toUpperCase() + random.split('.')[0].slice('1') + ' gatorade'
         })
     </script>
 </body>
