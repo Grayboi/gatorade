@@ -1,1 +1,48 @@
-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="container">
+        <img src="green.png" id="gatorade">
+    </div>
+    <p id="type">Green gatorade</p>
+    <style>
+        #container {
+            margin: auto;
+            text-align: center;
+        }
+        #gatorade {
+            height: 70vh;
+        }
+        #type {
+            text-align: center;
+            font-size: 3rem;
+        }
+    </style>
+    <script>
+        const alphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
+        const gatorades = ['purple.webp', 'green.png', 'yellow.png', 'orange.png', 'red.png', 'blue.png']
+        function setCharAt(str,index,chr) {
+            if(index > str.length-1) return str;
+            return str.substring(0,index) + chr + str.substring(index+1);
+        }
+        //thank you, rahul on stackoverflow!
+        function scrollLetter(el, result){
+            
+            el.innerHTML = ''
+            letter = alphabet[Math.floor(Math.random() * alphabet.length)]
+            if(result.charAt())
+        }
+        document.getElementById('gatorade').addEventListener('click', function(){
+            random = gatorades[Math.floor(Math.random() * gatorades.length)]
+            document.getElementById('gatorade').src = random
+            document.getElementById('type').innerHTML = random.split('.')[0].charAt(0).toUpperCase() + random.split('.')[0].slice('1') + ' gatorade'
+        })
+    </script>
+</body>
+</html>
